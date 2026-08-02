@@ -1,11 +1,11 @@
-/* =====================================================================
+/*
    Nexus CLIENT CONTROLLER - 5-PAGE SPA NAVIGATION & TELEMETRY
-   ===================================================================== */
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // -----------------------------------------------------------------
+
     // 1. PAGE ROUTER & NAVIGATION
-    // -----------------------------------------------------------------
+
     const pages = document.querySelectorAll('.page-view');
 
     function navigateToPage(pageId) {
@@ -106,9 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
         navigateToPage('hub');
     });
 
-    // -----------------------------------------------------------------
+
     // 2. BIOMETRIC ACCESS TERMINAL (LOGIN)
-    // -----------------------------------------------------------------
+
     const loginForm = document.getElementById('login-form');
     const loginError = document.getElementById('login-error-msg');
     const loginLaser = document.getElementById('login-laser');
@@ -203,9 +203,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // -----------------------------------------------------------------
+
     // 3. WEBSOCKET NETWORKING & TELEMETRY
-    // -----------------------------------------------------------------
+
     const connBadge = document.getElementById('connection-status');
     const engBadge = document.getElementById('engine-status');
     const actionDisplay = document.getElementById('current-action-display');
@@ -355,9 +355,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // -----------------------------------------------------------------
+
     // 4. TELEMETRY WRITER
-    // -----------------------------------------------------------------
+
     function updateTelemetryUI(data) {
         // Update FPS & Action Text
         fpsDisplay.textContent = String(data.fps).padStart(2, '0');
@@ -459,9 +459,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // -----------------------------------------------------------------
     // 5. SETTINGS CHANGE BROADCASTER
-    // -----------------------------------------------------------------
+
     function sendSettingsUpdate() {
         if (!socket || socket.readyState !== WebSocket.OPEN) return;
 
@@ -562,9 +561,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // -----------------------------------------------------------------
+
     // 6. ENGINE SHUTDOWN ENGINE
-    // -----------------------------------------------------------------
+
     btnShutdown.addEventListener('click', () => {
         if (engineActiveState) {
             // Terminating
@@ -616,7 +615,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Voice Control UI Toggle
     const voiceCmdBtn = document.getElementById('gesture-voice-cmd');
     const voiceCmdPanel = document.getElementById('voice-cmd-panel');
-    
+
     if (voiceCmdBtn && voiceCmdPanel) {
         voiceCmdBtn.addEventListener('click', () => {
             if (voiceCmdPanel.style.display === 'none') {
