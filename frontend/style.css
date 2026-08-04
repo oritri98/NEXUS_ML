@@ -83,3 +83,43 @@ body {
     min-height: 100vh;
     width: 100%;
 }
+
+/* Futuristic Button Styling */
+.cyber-btn {
+    position: relative;
+    padding: 14px 28px;
+    background: transparent;
+    border: 1px solid var(--accent-cyan);
+    border-radius: var(--border-radius-md);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cyber-btn .btn-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+    z-index: 1;
+}
+
+.cyber-btn .btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.cyber-btn:hover {
+    border-color: #fff;
+    box-shadow: 0 0 15px var(--accent-cyan);
+    text-shadow: 0 0 8px #fff;
+}
