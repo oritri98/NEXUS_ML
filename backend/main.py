@@ -24,3 +24,7 @@ from pydantic import BaseModel
 from mediapipe.tasks import python as mp_python
 from mediapipe.tasks.python import vision
 
+base_options = mp_python.BaseOptions(model_asset_path=os.path.abspath(os.path.join(os.path.dirname(__file__), "hand_landmarker.task")))
+
+                                       
+
