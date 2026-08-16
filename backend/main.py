@@ -29,4 +29,5 @@ options = vision.HandLandmarkerOptions(base_options=base_options,
                                        num_hands=2,
                                        min_hand_detection_confidence=0.75,
                                        min_tracking_confidence=0.75)
+detector = vision.HandLandmarker.create_from_options(options)
 
