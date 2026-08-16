@@ -27,6 +27,6 @@ from mediapipe.tasks.python import vision
 base_options = mp_python.BaseOptions(model_asset_path=os.path.abspath(os.path.join(os.path.dirname(__file__), "hand_landmarker.task")))
 options = vision.HandLandmarkerOptions(base_options=base_options,
                                        num_hands=2,
-                                       
-                                       
+                                       min_hand_detection_confidence=0.75,
+                                       min_tracking_confidence=0.75)
 
