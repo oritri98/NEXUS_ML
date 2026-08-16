@@ -19,4 +19,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+# Initialize MediaPipe Hands Tasks API in the main thread scope
+# This prevents thread-safety and dynamic lazy-loading issues inside child threads
+from mediapipe.tasks import python as mp_python
+from mediapipe.tasks.python import vision
 
