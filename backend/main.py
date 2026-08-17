@@ -31,3 +31,42 @@ options = vision.HandLandmarkerOptions(base_options=base_options,
                                        min_tracking_confidence=0.75)
 detector = vision.HandLandmarker.create_from_options(options)
 
+face_base_options = mp_python.BaseOptions(model_asset_path=os.path.abspath(os.path.join(os.path.dirname(__file__), "face_landmarker.task")))
+face_options = vision.FaceLandmarkerOptions(base_options=face_base_options,
+                                            output_face_blendshapes=False,
+                                            output_facial_transformation_matrixes=False,
+                                            num_faces=1)
+face_detector = vision.FaceLandmarker.create_from_options(face_options)
+
+# Initialize FastAPI
+app = FastAPI(title="Nexus Gesture Engine")
+
+# Enable CORS for frontend web accessibility
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+groq_client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
+
+
+
+
+
+
+
+   
+   
+
+
+
+  
+  
+    
+   
+   
+
