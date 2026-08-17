@@ -58,9 +58,9 @@ DB_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "users.json"))
 
 # Pydantic model for User Logins
 class LoginRequest(BaseModel):
-
-   
-   
+    name: str
+    email: str
+    password: str
 
 
 
