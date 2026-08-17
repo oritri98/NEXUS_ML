@@ -62,7 +62,7 @@ class LoginRequest(BaseModel):
     email: str
     password: str
 
-
+# Static Telemetry State (shared between tracking thread and WebSocket thread)
 
   
   
