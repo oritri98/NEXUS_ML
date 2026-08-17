@@ -65,7 +65,7 @@ class LoginRequest(BaseModel):
 # Static Telemetry State (shared between tracking thread and WebSocket thread)
 telemetry = {
     "fps": 0,
-  
+    "current_action": "SYSTEM IDLE",
     
    
    
