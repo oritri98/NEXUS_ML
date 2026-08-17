@@ -66,7 +66,7 @@ class LoginRequest(BaseModel):
 telemetry = {
     "fps": 0,
     "current_action": "SYSTEM IDLE",
-    
-   
-   
+    "action_color": [0, 255, 255], # RGB format
+    "cursor": {"x": 0, "y": 0},
+    "volume": 50,
 
