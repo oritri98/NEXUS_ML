@@ -63,8 +63,8 @@ class LoginRequest(BaseModel):
     password: str
 
 # Static Telemetry State (shared between tracking thread and WebSocket thread)
-
-  
+telemetry = {
+    "fps": 0,
   
     
    
