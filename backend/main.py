@@ -80,7 +80,7 @@ config = {
     "camera_index": 0,
     "smooth_closeness": 2.0,
     "blink_threshold": 0.22,
-    
+    "show_opencv_window": False,
 
 
 
