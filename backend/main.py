@@ -69,4 +69,18 @@ telemetry = {
     "action_color": [0, 255, 255], # RGB format
     "cursor": {"x": 0, "y": 0},
     "volume": 50,
+    "desktop_active": False,
+
+
+
+
+
+   
+   
+  
+ 
+    
+
+
+
 
