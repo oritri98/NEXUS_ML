@@ -81,7 +81,8 @@ config = {
     "smooth_closeness": 2.0,
     "blink_threshold": 0.22,
     "show_opencv_window": False,
-
+    "modalities": {
+        "hand_gestures": True,
 
 
 
