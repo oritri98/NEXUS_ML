@@ -84,5 +84,6 @@ config = {
     "modalities": {
         "hand_gestures": True,
         "face_tracking": True,
-
+        "voice_commands": False
+    },
 
