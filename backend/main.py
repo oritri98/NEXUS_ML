@@ -83,6 +83,6 @@ config = {
     "show_opencv_window": False,
     "modalities": {
         "hand_gestures": True,
-
+        "face_tracking": True,
 
 
