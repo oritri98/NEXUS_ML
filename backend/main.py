@@ -78,8 +78,8 @@ telemetry = {
 config = {
     "engine_active": True,
     "camera_index": 0,
-  
- 
+    "smooth_closeness": 2.0,
+    "blink_threshold": 0.22,
     
 
 
