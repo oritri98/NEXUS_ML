@@ -70,10 +70,11 @@ telemetry = {
     "cursor": {"x": 0, "y": 0},
     "volume": 50,
     "desktop_active": False,
+    "landmarks": [],
+    "screen_size": {"width": 1920, "height": 1080}
+}
 
-
-
-
+# Configuration settings (dynamic from frontend)
 
    
    
