@@ -75,9 +75,9 @@ telemetry = {
 }
 
 # Configuration settings (dynamic from frontend)
-
-   
-   
+config = {
+    "engine_active": True,
+    "camera_index": 0,
   
  
     
