@@ -109,6 +109,11 @@ telemetry["screen_size"] = {"width": screen_w, "height": screen_h}
 pyautogui.FAILSAFE = False
 pyautogui.PAUSE = 0  
 
+# Track WebSocket connections
+connected_clients = set()
+
+# Thread lock for telemetry object access
+telemetry_lock = threading.Lock()
 
 # Directory for screenshots
 SCREENSHOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "screenshots"))
