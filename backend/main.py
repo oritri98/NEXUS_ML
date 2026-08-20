@@ -132,5 +132,7 @@ def draw_hand_skeleton(frame, landmarks, w, h, color):
         pt1 = (int(landmarks[start_idx].x * w), int(landmarks[start_idx].y * h))
         pt2 = (int(landmarks[end_idx].x * w), int(landmarks[end_idx].y * h))
         cv2.line(frame, pt1, pt2, color, 2)
-    
+    for lm in landmarks:
+        pt = (int(lm.x * w), int(lm.y * h))
+        cv2.circle(frame, pt, 4, color, -1)
 
