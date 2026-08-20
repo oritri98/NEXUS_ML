@@ -103,6 +103,11 @@ config = {
     }
 }
 
+# Screen coordinates setup
+screen_w, screen_h = pyautogui.size()
+telemetry["screen_size"] = {"width": screen_w, "height": screen_h}
+pyautogui.FAILSAFE = False
+pyautogui.PAUSE = 0  
 
 
 # Directory for screenshots
