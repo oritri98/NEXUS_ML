@@ -129,5 +129,6 @@ def draw_hand_skeleton(frame, landmarks, w, h, color):
         (13,17), (0,17), (17,18), (18,19), (19,20)
     ]
     for start_idx, end_idx in connections:
+        pt1 = (int(landmarks[start_idx].x * w), int(landmarks[start_idx].y * h))
     
 
