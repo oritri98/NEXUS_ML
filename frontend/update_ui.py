@@ -36,9 +36,12 @@ new_html = """                <div class="armory-segments">
                                         <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-flash"><div class="mock-flash"></div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="1.5" style="width: 24px; height: 24px; position: absolute; z-index: 1;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" /><circle cx="12" cy="13" r="4" /></svg></div></div>
                                     </div>
                                 </div>
-                                """
-
-
-
-with open(html_file, 'w', encoding='utf-8') as f:
-    f.write(new_content)
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">Make a closed fist with your left thumb pointing straight up.</div>
+                                    <div class="showcase-header"><h3>Volume Up</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HAND</span><div class="visual-placeholder loop-pinch-pinky"><div class="hand-shape-pinky" style="transform: rotate(0); animation: none; border-radius: 8px 8px 14px 14px;"><div style="position:absolute;top:-10px;left:5px;width:6px;height:12px;background:var(--accent-yellow);border-radius:2px;"></div></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-vol"><div class="vol-slider-mock"><div class="vol-fill" style="width: 80%; animation: none;"></div></div><span class="vol-label" style="animation: none; color: var(--accent-yellow);">VOL: UP</span></div></div>
+                                    </div>
+                                </div>
+                   
