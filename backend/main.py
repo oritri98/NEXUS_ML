@@ -86,4 +86,37 @@ config = {
         "face_tracking": True,
         "voice_commands": False
     },
+    "gestures_enabled": {
+        "hover": True,
+        "left_click": True,
+        "right_click": True,
+        "click_drag": True,
+        "minimize": True,
+        "maximize": True,
+        "screenshot": True,
+        "volume_up": True,
+        "volume_down": True,
+        "enter_scroll": True,
+        "scroll_up": True,
+        "scroll_down": True,
+        "exit_scroll": True
+    }
+}
+
+
+
+# Directory for screenshots
+SCREENSHOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "screenshots"))
+os.makedirs(SCREENSHOT_DIR, exist_ok=True)
+
+
+def draw_hand_skeleton(frame, landmarks, w, h, color):
+    connections = [
+        (0,1), (1,2), (2,3), (3,4),
+        (0,5), (5,6), (6,7), (7,8),
+     
+      
+        
+    ]
+    
 
