@@ -108,7 +108,24 @@ new_html = """                <div class="armory-segments">
                                         <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder"><span style="color:var(--accent-cyan); font-weight:bold; font-size:12px;">SCROLL MODE ON</span></div></div>
                                     </div>
                                 </div>
-
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">While in scroll mode, hold your right index finger up.</div>
+                                    <div class="showcase-header"><h3>Scroll Up</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HAND</span><div class="visual-placeholder loop-hover"><div class="hover-finger"></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-scroll"><div class="mock-webpage"><div class="web-line line-1" style="animation-direction:reverse;"></div><div class="web-line line-2" style="animation-direction:reverse;"></div><div class="web-line line-3" style="animation-direction:reverse;"></div></div></div></div>
+                                    </div>
+                                </div>
+                               
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">Make a closed fist with both hands for more than 1 second.</div>
+                                    <div class="showcase-header"><h3>Exit Scroll Mode</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HANDS</span><div class="visual-placeholder loop-fist"><div class="fist-shape" style="animation:none; width:15px; height:15px; margin-right:5px;"></div><div class="fist-shape" style="animation:none; width:15px; height:15px;"></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder"><span style="color:var(--text-muted); font-weight:bold; font-size:12px;">SCROLL MODE OFF</span></div></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>"""
