@@ -44,4 +44,64 @@ new_html = """                <div class="armory-segments">
                                         <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-vol"><div class="vol-slider-mock"><div class="vol-fill" style="width: 80%; animation: none;"></div></div><span class="vol-label" style="animation: none; color: var(--accent-yellow);">VOL: UP</span></div></div>
                                     </div>
                                 </div>
-                   
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">Make a closed fist with your left thumb pointing straight down.</div>
+                                    <div class="showcase-header"><h3>Volume Down</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HAND</span><div class="visual-placeholder loop-pinch-pinky"><div class="hand-shape-pinky" style="transform: rotate(180deg); animation: none; border-radius: 8px 8px 14px 14px;"><div style="position:absolute;top:-10px;left:5px;width:6px;height:12px;background:var(--accent-yellow);border-radius:2px;"></div></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-vol"><div class="vol-slider-mock"><div class="vol-fill" style="width: 20%; animation: none;"></div></div><span class="vol-label" style="animation: none; color: var(--accent-yellow);">VOL: DOWN</span></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Segment -->
+                        <div class="armory-segment">
+                            <h3 class="segment-title">Right Hand Gestures (Primary Mouse Controls)</h3>
+                            <div class="segment-grid">
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">Hold your right index finger up. The cursor will follow your finger's movement.</div>
+                                    <div class="showcase-header"><h3>Move Cursor</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HAND</span><div class="visual-placeholder loop-hover"><div class="hover-finger"></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-cursor"><div class="mock-cursor"></div></div></div>
+                                    </div>
+                                </div>
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">Pinch your right index finger and thumb together.</div>
+                                    <div class="showcase-header"><h3>Left Click</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HAND</span><div class="visual-placeholder loop-pinch"><div class="hand-shape"></div><div class="pinch-dot"></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-click"><div class="mock-cursor"></div><div class="mock-file"></div></div></div>
+                                    </div>
+                                </div>
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">Hold only your right pinky finger up (all other fingers closed).</div>
+                                    <div class="showcase-header"><h3>Right Click</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HAND</span><div class="visual-placeholder loop-pinch-middle"><div class="hand-shape-middle"></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-menu"><div class="mock-menu"><div class="menu-line"></div><div class="menu-line"></div></div></div></div>
+                                    </div>
+                                </div>
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">Pinch your right pinky and thumb together. This holds the mouse button down, allowing you to drag items by moving your hand. Releasing the pinch releases the drag.</div>
+                                    <div class="showcase-header"><h3>Click and Drag</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HAND</span><div class="visual-placeholder loop-pinch"><div class="hand-shape" style="border-radius: 50% 10% 50% 50%;"></div><div class="pinch-dot"></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-click"><div class="mock-cursor"></div><div class="mock-file" style="animation: none; border-color: var(--accent-cyan); background: rgba(0, 229, 255, 0.08); transform: scale(1);"></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>"""
+
+# Find the block from <div class="showcase-grid"> to just before <div class="navigation-footer">
+# Use re.DOTALL to match across newlines
+pattern = re.compile(r'<div class="showcase-grid">.*?(?=<div class="navigation-footer">)', re.DOTALL)
+new_content = pattern.sub(new_html + '\n\n                ', content)
+
+with open(html_file, 'w', encoding='utf-8') as f:
+    f.write(new_content)
