@@ -116,7 +116,14 @@ new_html = """                <div class="armory-segments">
                                         <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-scroll"><div class="mock-webpage"><div class="web-line line-1" style="animation-direction:reverse;"></div><div class="web-line line-2" style="animation-direction:reverse;"></div><div class="web-line line-3" style="animation-direction:reverse;"></div></div></div></div>
                                     </div>
                                 </div>
-                               
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">While in scroll mode, hold both your right index and middle fingers up.</div>
+                                    <div class="showcase-header"><h3>Scroll Down</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HAND</span><div class="visual-placeholder loop-peace"><div class="peace-fingers"></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-scroll"><div class="mock-webpage"><div class="web-line line-1"></div><div class="web-line line-2"></div><div class="web-line line-3"></div></div></div></div>
+                                    </div>
+                                </div>
                                 <div class="showcase-card glass-panel">
                                     <div class="card-desc-bubble">Make a closed fist with both hands for more than 1 second.</div>
                                     <div class="showcase-header"><h3>Exit Scroll Mode</h3></div>
