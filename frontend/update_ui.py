@@ -95,7 +95,22 @@ new_html = """                <div class="armory-segments">
                         </div>
                     </div>
 
+                    <!-- Bottom Row -->
+                    <div class="armory-bottom-row">
+                        <div class="armory-segment">
+                            <h3 class="segment-title">Two-Handed Gestures (Scroll Mode)</h3>
+                            <div class="segment-grid four-cols">
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">Hold both hands up with open palms for more than 1 second.</div>
+                                    <div class="showcase-header"><h3>Enter Scroll Mode</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HANDS</span><div class="visual-placeholder loop-pinch-ring"><div class="hand-shape-ring" style="animation:none; transform:none; display:flex; gap:10px;"><div class="hand-shape-pinky" style="width:20px;height:20px;border-radius:2px;"></div><div class="hand-shape-pinky" style="width:20px;height:20px;border-radius:2px;"></div></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder"><span style="color:var(--accent-cyan); font-weight:bold; font-size:12px;">SCROLL MODE ON</span></div></div>
+                                    </div>
+                                </div>
 
+                        </div>
+                    </div>
                 </div>"""
 
 # Find the block from <div class="showcase-grid"> to just before <div class="navigation-footer">
