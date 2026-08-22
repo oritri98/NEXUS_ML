@@ -136,3 +136,9 @@ def draw_hand_skeleton(frame, landmarks, w, h, color):
         pt = (int(lm.x * w), int(lm.y * h))
         cv2.circle(frame, pt, 4, color, -1)
 
+
+def tracking_loop():
+    global telemetry, config, screen_w, screen_h
+    
+    cap = None
+   
