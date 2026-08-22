@@ -141,4 +141,6 @@ def tracking_loop():
     global telemetry, config, screen_w, screen_h
     
     cap = None
-   
+    global detector, face_detector
+    
+  
