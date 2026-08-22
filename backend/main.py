@@ -143,4 +143,6 @@ def tracking_loop():
     cap = None
     global detector, face_detector
     
-  
+    prev_x, prev_y = 0, 0
+    prev_time = time.time()
+   
