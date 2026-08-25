@@ -250,5 +250,7 @@ def tracking_loop():
                     # Thumbs down: thumb tip is significantly BELOW the wrist and straight
                     is_thumb_down = (thumb.y > lm[0].y + 0.06) and (thumb.y > lm[3].y + 0.02)
                     
-
+                    thm_x, thm_y = int(thumb.x * w), int(thumb.y * h)
+                    idx_x, idx_y = int(index.x * w), int(index.y * h)
+ 
                    
