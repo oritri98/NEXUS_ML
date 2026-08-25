@@ -145,4 +145,103 @@ def tracking_loop():
     
     prev_x, prev_y = 0, 0
     prev_time = time.time()
-   
+    is_dragging = False
+    desktop_active = False
+    
+    last_screenshot_time = 0
+    last_right_click_time = 0
+    last_boss_key_time = 0
+    last_left_click_time = 0
+    
+    maximize_gesture_start = None
+    minimize_gesture_start = None
+    scroll_mode_active = False
+    two_hands_open_start = None
+    two_hands_closed_start = None
+    last_both_open_time = 0
+    last_both_closed_time = 0
+    global_cooldown_until = 0
+
+    # Face tracking variables
+    last_left_turn_time = 0
+    last_right_turn_time = 0
+    is_head_currently_turned_left = False
+    is_head_currently_turned_right = False
+
+    PINCH_ENGAGE = 28
+    PINCH_RELEASE = 40
+
+    print("[SYSTEM] Core Tracking Thread Started.")
+
+    current_camera_index = 0
+
+    while True:
+        try:
+            target_camera_index = config.get("camera_index", 0)
+            
+            if cap is not None and cap.isOpened() and current_camera_index != target_camera_index:
+                cap.release()
+                print(f"[SYSTEM] Camera index changed to {target_camera_index}. Releasing old camera.")
+                
+            if not config.get("engine_active", True):
+                if cap is not None and cap.isOpened():
+                    cap.release()
+                    cv2.destroyAllWindows()
+                    print("[SYSTEM] Camera Released (Engine Standby).")
+                time.sleep(0.2)
+                continue
+                
+            if cap is None or not cap.isOpened():
+                current_camera_index = target_camera_index
+                cap = cv2.VideoCapture(current_camera_index)
+                if not cap.isOpened():
+                    time.sleep(1.0)
+                    continue
+                print(f"[SYSTEM] Camera {current_camera_index} Initialized (Engine Active).")
+                
+            success, frame = cap.read()
+            if not success:
+                time.sleep(0.01)
+                continue
+                
+            frame = cv2.flip(frame, 1)
+            h, w, _ = frame.shape 
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            
+            mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
+            results = detector.detect(mp_image)
+            face_results = face_detector.detect(mp_image)
+            
+            # Draw Face Mesh
+            if face_results.face_landmarks and config["modalities"].get("face_tracking", True):
+                for flm in face_results.face_landmarks[0]:
+                    pt = (int(flm.x * w), int(flm.y * h))
+                    cv2.circle(frame, pt, 1, (0, 255, 255), -1)
+            
+            current_action = "SYSTEM IDLE"
+            action_color = [0, 255, 255] # Cyan
+            normalized_lms = []
+            
+            right_hand_state = None
+            left_hand_state = None
+            hands_data = []
+
+            if results.hand_landmarks and results.handedness:
+                for idx, hand_landmarks in enumerate(results.hand_landmarks):
+                    category = results.handedness[idx][0].category_name
+                    is_right_hand = (category == "Left") # Mirrored camera
+                    
+                    lm = hand_landmarks
+                    normalized_lms.extend([{"x": p.x, "y": p.y, "z": p.z} for p in lm])
+                    draw_hand_skeleton(frame, lm, w, h, (0, 255, 0) if is_right_hand else (255, 0, 255))
+                    
+                    thumb, index, middle, ring, pinky = lm[4], lm[8], lm[12], lm[16], lm[20]
+                    
+                    is_index_up = index.y < lm[6].y
+                    is_middle_up = middle.y < lm[10].y
+                    is_ring_up = ring.y < lm[14].y
+                    is_pinky_up = pinky.y < lm[18].y
+                    
+                    is_open_palm = is_index_up and is_middle_up and is_ring_up and is_pinky_up
+
+                   
