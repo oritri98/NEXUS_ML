@@ -243,5 +243,12 @@ def tracking_loop():
                     is_pinky_up = pinky.y < lm[18].y
                     
                     is_open_palm = is_index_up and is_middle_up and is_ring_up and is_pinky_up
+                    is_fist = not is_index_up and not is_middle_up and not is_ring_up and not is_pinky_up
+                    
+                    # Thumbs up: thumb tip is significantly ABOVE the index MCP and straight
+                    is_thumb_up = (thumb.y < lm[5].y - 0.06) and (thumb.y < lm[3].y - 0.02)
+                    # Thumbs down: thumb tip is significantly BELOW the wrist and straight
+                    is_thumb_down = (thumb.y > lm[0].y + 0.06) and (thumb.y > lm[3].y + 0.02)
+                    
 
                    
