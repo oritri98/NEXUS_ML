@@ -18,7 +18,14 @@ reverted_bottom_row = """                    <!-- Bottom Row -->
                                         <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder"><span style="color:var(--accent-cyan); font-weight:bold; font-size:12px;">SCROLL MODE ON</span></div></div>
                                     </div>
                                 </div>
-                             
+                                <div class="showcase-card glass-panel">
+                                    <div class="card-desc-bubble">While in scroll mode, hold your right index finger up.</div>
+                                    <div class="showcase-header"><h3>Scroll Up</h3></div>
+                                    <div class="split-visuals">
+                                        <div class="visual-pane hand-pane"><span class="pane-label">HAND</span><div class="visual-placeholder loop-hover"><div class="hover-finger"></div></div></div>
+                                        <div class="visual-pane screen-pane"><span class="pane-label">SCREEN</span><div class="visual-placeholder loop-scroll"><div class="mock-webpage"><div class="web-line line-1" style="animation-direction:reverse;"></div><div class="web-line line-2" style="animation-direction:reverse;"></div><div class="web-line line-3" style="animation-direction:reverse;"></div></div></div></div>
+                                    </div>
+                                </div>
                                 <div class="showcase-card glass-panel">
                                     <div class="card-desc-bubble">While in scroll mode, hold both your right index and middle fingers up.</div>
                                     <div class="showcase-header"><h3>Scroll Down</h3></div>
