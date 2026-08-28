@@ -40,12 +40,3 @@
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 229, 255, 0.12) transparent;
 }
-
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
-    font-family: var(--font-sans);
-    min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
-}
