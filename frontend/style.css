@@ -20,7 +20,9 @@
     --accent-red: #ff3366;
     --accent-orange: #ff9f1c;
     --accent-yellow: #ffb703;
-
+    --text-primary: #ffffff;
+    --text-muted: #8aa1b5;
+    --text-light: #c2d6e8;
 
     /* Variables */
     --border-radius-lg: 16px;
